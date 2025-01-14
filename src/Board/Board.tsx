@@ -2,6 +2,7 @@ import { FunctionComponent, useState } from 'react';
 import { GameResult, NullAblePlayer } from '../types';
 import './Board.css';
 import { checkWinner, cloneBoard, createNullBoard } from './utils';
+import Cell from '../Cell/Cell';
 
 const Board: FunctionComponent = () => {
     const [isPlayerX, setIsPlayerX] = useState<boolean>(true);
@@ -47,13 +48,12 @@ const Board: FunctionComponent = () => {
                 {board.map((boardRow, row) => (
                     <div className='board_row' key={`board_row_${row}`}>
                         {boardRow.map((cellValue, col) => (
-                            <button
+                            <Cell
                                 key={`board_cell_${row}_${col}`}
                                 className='cell'
-                                onClick={() => playTurn(row, col)}
-                            >
-                                {cellValue}
-                            </button>
+                                value={cellValue}
+                                setCellValue={() => playTurn(row, col)}
+                            />
                         ))}
                     </div>
                 ))}
