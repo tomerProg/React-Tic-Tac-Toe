@@ -1,0 +1,29 @@
+#tic_tac_toe_app_bar,
+#tic_tac_toe_footer {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#tic_tac_toe_root {
+    height: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+#board {
+    height: 80%;
+    padding: 5%;
+    box-sizing: border-box;
+}
+
+.board_row {
+    height: 33%;
+    display: flex;
+    justify-content: center;
+}
+
+.cell {
+    border: solid 1px;
+}
